@@ -1,0 +1,41 @@
+# Gitleaks configuration for Fleetwright
+# Docs: https://github.com/gitleaks/gitleaks#configuration
+
+title = "Fleetwright secrets scan"
+
+[extend]
+# Inherit the default gitleaks ruleset
+useDefault = true
+
+[[rules]]
+id = "anthropic-api-key"
+description = "Anthropic API key"
+regex = '''(?i)(sk-ant-[a-zA-Z0-9\-_]{40,})'''
+tags = ["key", "anthropic"]
+
+[[rules]]
+id = "supabase-service-key"
+description = "Supabase service role key (JWT)"
+regex = '''(?i)(sbp_[a-zA-Z0-9]{40,}|eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.[a-zA-Z0-9_\-]+\.[a-zA-Z0-9_\-]+)'''
+tags = ["key", "supabase"]
+
+[[rules]]
+id = "supabase-url-with-key"
+description = "Supabase URL containing a real project ID (not a placeholder)"
+regex = '''https://[a-z]{20,}\.supabase\.co'''
+tags = ["url", "supabase"]
+
+[allowlist]
+# Allow placeholder comments and .env.example values — these are intentional templates
+regexes = [
+    '''your-project\.supabase\.co''',
+    '''change-me-generate-with-openssl''',
+    '''your-service-role-key''',
+]
+
+paths = [
+    # Never scan the example env file for secrets (it only has placeholders)
+    ".env.example",
+    # Test fixtures are synthetic
+    "tests/fixtures/",
+]

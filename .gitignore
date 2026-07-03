@@ -1,0 +1,36 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.env.*
+!.env.example
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+*.log
+*.jsonl
+!tests/fixtures/*.jsonl
+node_modules/
+.next/
+cockpit/.next/
+cockpit/node_modules/
+
+# Fleet runtime data (user-generated)
+.fleetwright/
+state/
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Security scan tooling (install via CI or `brew install gitleaks`)
+gitleaks
+gitleaks.tar.gz

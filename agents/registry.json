@@ -1,0 +1,30 @@
+{
+  "_comment": "Fleetwright agent registry — one entry per agent. Customize for your install.",
+  "version": "1",
+  "agents": [
+    {
+      "name": "ceo",
+      "kind": "orchestrator",
+      "description": "CEO orchestrator — holds goals, routes work, synthesizes fleet output. Always-on lead agent.",
+      "model": "flagship",
+      "definition": "agents/examples/ceo/CLAUDE.md",
+      "scope": "global"
+    },
+    {
+      "name": "work",
+      "kind": "domain",
+      "description": "Work domain agent — professional projects, tasks, deliverables, and goals.",
+      "model": "agent",
+      "definition": "agents/examples/work/CLAUDE.md",
+      "scope": "domain"
+    },
+    {
+      "name": "personal",
+      "kind": "domain",
+      "description": "Personal domain agent — life admin, personal goals, and non-work projects.",
+      "model": "agent",
+      "definition": "agents/examples/personal/CLAUDE.md",
+      "scope": "domain"
+    }
+  ]
+}

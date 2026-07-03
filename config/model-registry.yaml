@@ -1,0 +1,61 @@
+# Fleetwright model registry — one answer per tier.
+# Edit this file to upgrade models; env var overrides are also supported:
+#   MODEL_TIER_OVERRIDE_AGENT=claude-sonnet-4-6
+
+version: 1
+
+flagship_tier: flagship
+
+tiers:
+  flagship:
+    cli_id: claude-fable-5
+    api_id: claude-fable-5
+    cli_alias: fable
+    label: "Fable 5"
+    blurb: "Frontier — deepest reasoning, long-horizon agentic work"
+    openrouter_id: null
+
+  review:
+    cli_id: claude-opus-4-8
+    api_id: claude-opus-4-8
+    cli_alias: opus
+    label: "Opus 4.8"
+    blurb: "Strong autonomous execution"
+    openrouter_id: "anthropic/claude-opus-4"
+
+  agent:
+    cli_id: claude-sonnet-4-6
+    api_id: claude-sonnet-4-6
+    cli_alias: sonnet
+    label: "Sonnet 4.6"
+    blurb: "Workhorse — balanced capability and speed for fleet workers"
+    openrouter_id: "anthropic/claude-sonnet-4-6"
+
+  bulk:
+    cli_id: claude-haiku-4-5-20251001
+    api_id: claude-haiku-4-5-20251001
+    cli_alias: haiku
+    label: "Haiku 4.5"
+    blurb: "Fast and cheap — extraction, classification, simple tasks"
+    openrouter_id: "anthropic/claude-haiku-4-5"
+
+aliases:
+  # Legacy/shorthand → tier
+  "claude-sonnet-4-6": agent
+  "claude-opus-4-8": review
+  "claude-haiku-4-5-20251001": bulk
+  sonnet: agent
+  opus: review
+  haiku: bulk
+  fable: flagship
+
+no_sampling_params_prefixes:
+  - "claude-fable"
+
+cockpit:
+  models:
+    - tier: flagship
+      default: true
+    - tier: review
+    - tier: agent
+    - tier: bulk

@@ -1,0 +1,35 @@
+# Fleetwright domain registry — config-driven domain/agent definitions.
+# Copy to config/domains.yaml and customize for your setup.
+#
+# Each domain entry defines a "brain" agent that persists across restarts
+# and holds context about that area of your work/life.
+
+domains:
+  - name: work
+    description: "Primary work domain — projects, tasks, and professional goals"
+    cwd: "~/fleetwright-domains/work"
+    agent_definition: "agents/examples/work/CLAUDE.md"
+    model: agent  # tier from model-registry.yaml
+    mcp_servers: []
+    auto_resume: true  # re-attach this domain brain on bridge start
+
+  - name: personal
+    description: "Personal domain — life admin, goals, and personal projects"
+    cwd: "~/fleetwright-domains/personal"
+    agent_definition: "agents/examples/personal/CLAUDE.md"
+    model: agent
+    mcp_servers: []
+    auto_resume: true
+
+# Add more domains here — one per area of your work/life.
+# Example additional domains:
+#
+#  - name: research
+#    description: "Research projects and literature review"
+#    cwd: "~/fleetwright-domains/research"
+#    agent_definition: "agents/examples/work/CLAUDE.md"
+#    model: review
+#    mcp_servers:
+#      - type: brave_search
+#        config: {}
+#    auto_resume: false
