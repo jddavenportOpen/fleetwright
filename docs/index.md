@@ -2,6 +2,9 @@
 
 **Self-hosted agent operations OS — a persistent chief of staff that commands a fleet of AI agents across your whole work.**
 
+[![GitHub Stars](https://img.shields.io/github/stars/JDDavenport/fleetwright?style=social)](https://github.com/JDDavenport/fleetwright)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/JDDavenport/fleetwright/blob/main/LICENSE)
+
 Fleetwright gives you a **persistent, always-on agent fleet** on your own machine:
 
 - A **CEO orchestrator** holds your goals and routes work to the right agent or fleet worker.
