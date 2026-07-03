@@ -236,10 +236,10 @@ Would love feedback on the orchestration design!
 - [ ] Set repo description + homepage (`fleetwright.dev`) ✅ DONE 2026-07-03
 - [ ] Add GitHub topics ✅ DONE 2026-07-03
 - [ ] Register `fleetwright.dev` + `fleetwright.ai` — BLOCKED (see BLOCKERS.md)
-- [ ] GitHub Pages live (triggered by first push to main) — auto-deploys via docs.yml
+- [x] GitHub Pages live ✅ DONE 2026-07-03 — docs deployed to https://jddavenport.github.io/fleetwright/ (CNAME fleetwright.dev pending domain registration)
 - [ ] Post Show HN — draft in this file, ready to submit
 - [ ] Post X thread — draft in this file, ready to post
 - [ ] Post r/ClaudeAI — draft in this file, ready to submit
 - [ ] Post r/LocalLLaMA — draft in this file, ready to submit
 - [ ] Post in agent Discord communities — draft in this file, ready to send
-- [ ] Create GitHub release v0.1.0
+- [x] Create GitHub release v0.1.0 ✅ DONE 2026-07-03 — https://github.com/JDDavenport/fleetwright/releases/tag/v0.1.0
