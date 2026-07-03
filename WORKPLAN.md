@@ -2,7 +2,7 @@
 
 <!-- STATUS-BEGIN -->
 Progress: 6 of 6 milestones complete (100%) ✅ SHIPPED
-Last ship: 2026-07-03 — M6 Public flip + launch: repo public, GitHub topics + description set, Stars + Docs badges in README, LAUNCH.md (Show HN + X thread + Reddit + Discord drafts), v0.1.0 GitHub release, BLOCKERS.md (domain registration). Docs deploy wired via GitHub Pages.
+Last ship: 2026-07-03 — M6 Public flip + launch: repo public, v0.1.0 release, GitHub Pages live, LAUNCH.md (Show HN + X + Reddit + Discord). BLOCKERS.md: domain reg + social posting.
 <!-- STATUS-END -->
 
 
