@@ -1,8 +1,8 @@
 # Fleetwright — WORKPLAN
 
 <!-- STATUS-BEGIN -->
-Progress: 4 of 6 milestones complete (67%)
-Last ship: 2026-07-03 — M4 Install story: PTY manager (send_turn SSE streaming), Next.js cockpit (port 3131, dark UI), docker-compose.yml (Postgres+cockpit), Dockerfile, scripts/bootstrap.sh (one-command setup), QUICKSTART.md, /health enhanced. 69 tests passing.
+Progress: 5 of 6 milestones complete (83%)
+Last ship: 2026-07-03 — M5 Docs: README, CONTRIBUTING, 7-page docs site (MkDocs Material), agent-authoring guide, domain-agent tutorial, Bridge API reference, architecture Mermaid diagrams, GitHub Pages workflow, CNAME ready for fleetwright.dev.
 <!-- STATUS-END -->
 
 
@@ -22,7 +22,7 @@ Last ship: 2026-07-03 — M4 Install story: PTY manager (send_turn SSE streaming
 - [x] **M2 — Extraction.** Pull the components into a fresh `fleetwright` repo with a clean module layout. Replace JD-specific domains/agents with generic examples + a config-driven domain/agent registry. Strip the 8 personal domains down to 1-2 example domains. ✓ **Done 2026-07-03:** `fleetwright/` package (fleet, sdk, orchestrator, bridge); SQLite + Supabase DB adapters; YAML domain registry; CEO + work + personal example agents; 53 tests; cockpit/pty_manager stubs for M4.
 - [x] **M3 — Personal-data scrub (HARD GATE, Commandment XI).** Automated + manual sweep: no API keys, tokens, `.env`, CRM/contacts, Supabase URLs, phone numbers, family/financial data, JD-specific paths, or proprietary prompts. Added `scripts/scan-secrets.py` (local sweep, 48 files, 0 findings) and `.github/workflows/secrets-scan.yml` (gitleaks CI gate). History squashed — no private refs in git history. ✓ **Done 2026-07-03.**
 - [x] **M4 — Install story.** One-command setup (Docker compose or a bootstrap script): bridge + dashboard + Postgres/Supabase + Claude Code auth. `.env.example`, prerequisites, "bring your own Claude Code subscription." Verify on a clean machine. ✓ **Done 2026-07-03:** PTY manager (real `--output-format stream-json` + `--resume` SSE streaming), Next.js 15 cockpit (port 3131, dark UI, Docker-ready), `docker-compose.yml` (Postgres 16 + cockpit), `Dockerfile`, `scripts/bootstrap.sh` (one-command setup with prereq checks), `QUICKSTART.md`, enhanced `/health`. 69 tests passing.
-- [ ] **M5 — Docs.** README (done), QUICKSTART, ARCHITECTURE (the bridge/cockpit/fleet/Nerve-Center diagram), CONTRIBUTING, an agent-authoring guide, and a "build your own domain agent" tutorial. Land docs site (NOT on `openclaw.ai` — that brand is taken; use a fleetwright domain).
+- [x] **M5 — Docs.** README (done), QUICKSTART, ARCHITECTURE (the bridge/cockpit/fleet/Nerve-Center diagram), CONTRIBUTING, an agent-authoring guide, and a "build your own domain agent" tutorial. Land docs site (NOT on `openclaw.ai` — that brand is taken; use a fleetwright domain). ✓ **Done 2026-07-03:** README rewritten; `CONTRIBUTING.md`; `docs/` (8 pages: index, quickstart, architecture + Mermaid diagrams, configuration, agent-authoring, domain-agent tutorial, Bridge API reference, contributing); `mkdocs.yml` (Material theme, dark mode, Mermaid); `.github/workflows/docs.yml` (GitHub Pages deploy on push to main); `docs/CNAME` (ready for fleetwright.dev); `pyproject.toml` updated.
 - [ ] **M6 — Public flip + launch.** `gh repo edit JDDavenport/fleetwright --visibility public` (one command — gated on M3 green). Register `fleetwright.dev` / `.ai`. Launch post (Show HN / X / the agent-orchestration communities), positioned as the persistent self-hosted fleet cockpit vs the terminal-only multiplexers.
 
 ## Blocked on JD decisions

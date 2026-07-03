@@ -1,0 +1,81 @@
+site_name: Fleetwright
+site_description: Self-hosted agent operations OS — a persistent chief of staff that commands a fleet of AI agents across your whole work.
+site_url: https://fleetwright.dev
+repo_url: https://github.com/JDDavenport/fleetwright
+repo_name: JDDavenport/fleetwright
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+    - content.action.edit
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Quick Start: quickstart.md
+      - Configuration: configuration.md
+  - Architecture: architecture.md
+  - Agents:
+      - Agent Authoring Guide: agent-authoring.md
+      - Build Your Own Domain Agent: domain-agent-tutorial.md
+  - Reference:
+      - Bridge API: api-reference.md
+  - Contributing: contributing.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/JDDavenport/fleetwright
+
+copyright: Apache 2.0 — Fleetwright contributors

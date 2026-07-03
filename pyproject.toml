@@ -37,6 +37,7 @@ dev = [
     "pytest-cov>=5.0",
     "ruff>=0.4",
     "mypy>=1.10",
+    "mkdocs-material>=9.5",
 ]
 
 [project.scripts]
@@ -47,7 +48,7 @@ fleetwright-bridge  = "fleetwright.bridge.main:_main"
 
 [project.urls]
 Homepage = "https://github.com/JDDavenport/fleetwright"
-Documentation = "https://github.com/JDDavenport/fleetwright#readme"
+Documentation = "https://fleetwright.dev"
 Issues = "https://github.com/JDDavenport/fleetwright/issues"
 
 [tool.setuptools.packages.find]

@@ -116,37 +116,51 @@ Planned modules:
 
 ## Data Flow
 
-```
-User
- │
- ▼
-/chat cockpit (Next.js)
- │  SSE stream + REST
- ▼
-Bridge (FastAPI + PTY manager)
- │  PTY / subprocess
- ├──► CEO Claude Code session  ──► plan / route
- │                                    │
- ├──► Domain agent session            │ orchestrator.fanout()
- │                                    │
- └──► Fleet Engine                 ◄──┘
-       │  git-worktree + tmux
-       ├──► Worker 1 (Claude Code)
-       ├──► Worker 2 (Claude Code)
-       └──► Worker N (Claude Code)
-              │
-              ▼
-         agent_runs (Supabase / Postgres)
-              │
-              ▼
-    Nerve Center Dashboard (tasks/projects/org/CRM)
+```mermaid
+graph TD
+    Browser["Browser\n(cockpit — port 3131)"]
+    Bridge["Fleetwright Bridge\n(FastAPI — port 8787)"]
+    CEO["CEO Orchestrator\n(PTY session)"]
+    DomainW["work domain agent\n(PTY session)"]
+    DomainP["personal domain agent\n(PTY session)"]
+    Fleet["Fleet Engine\n(fleet.py)"]
+    W1["Worker 1\n(Claude Code + worktree)"]
+    W2["Worker 2"]
+    WN["Worker N"]
+    DB["Database\n(SQLite / Postgres / Supabase)"]
+    NC["Nerve Center Dashboard\n(optional plugin)"]
+
+    Browser -->|"REST + SSE"| Bridge
+    Bridge --> CEO
+    Bridge --> DomainW
+    Bridge --> DomainP
+    Bridge --> Fleet
+    Fleet --> W1
+    Fleet --> W2
+    Fleet --> WN
+    W1 -->|"events.jsonl"| DB
+    W2 -->|"events.jsonl"| DB
+    WN -->|"events.jsonl"| DB
+    Bridge -->|"checkpoints"| DB
+    DB --> NC
+    Browser --> NC
 ```
 
 **Key interfaces:**
-- **Bridge ↔ Cockpit:** REST + SSE at `http://localhost:8787` (configurable). Auth via HMAC-JWT (secret in `.env`).
-- **Bridge ↔ DB:** Supabase client (or Postgres via psycopg2). `checkpoints.py` + `chatdb.py`.
-- **Fleet ↔ Cockpit:** `/api/fleet/*` bridge routes surfacing `fleet.py` and `run_reconciler.py`.
-- **Agent ↔ Agent:** `ask_agent.py` (CLI bridge: `python3 -m fleetwright.sdk.ask_agent <target> "<msg>"`).
+
+| Interface | Transport | Auth |
+|---|---|---|
+| Bridge ↔ Cockpit | REST + SSE at `http://localhost:8787` | HMAC-JWT (`BRIDGE_SECRET` in `.env`) |
+| Bridge ↔ DB | Supabase client / psycopg2 / SQLite | Connection string / service key |
+| Fleet ↔ Cockpit | `/api/fleet/*` bridge routes | `BRIDGE_SECRET` |
+| Agent ↔ Agent | `ask_agent.py` → bridge turn endpoint | `BRIDGE_SECRET` |
+
+```
+# Inter-agent messaging CLI:
+python3 -m fleetwright.sdk.ask_agent <target> "<message>"
+```
+
+See [`docs/architecture.md`](docs/architecture.md) for the full Mermaid diagram with sequence flows.
 
 ---
 
