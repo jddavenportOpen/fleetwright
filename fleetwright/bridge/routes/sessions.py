@@ -89,3 +89,38 @@ async def resume_session(sid: str) -> dict:
         raise HTTPException(status_code=501, detail="PTY manager not available")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+import json as _json
+
+
+@router.post("/{sid}/turn")
+async def session_turn(sid: str, req: TurnRequest):
+    """Send a message to a session and stream the response as SSE."""
+    from fastapi.responses import StreamingResponse
+    from fleetwright.bridge.pty_manager import send_turn as _send_turn
+
+    async def _generate():
+        try:
+            async for chunk in _send_turn(
+                sid,
+                req.message,
+                req.max_duration_sec or 21600,
+            ):
+                yield chunk
+        except KeyError as e:
+            yield f"data: {_json.dumps({'type': 'error', 'error': str(e)})}\n\n"
+        except RuntimeError as e:
+            yield f"data: {_json.dumps({'type': 'error', 'error': str(e)})}\n\n"
+        except Exception as e:
+            log.exception("session_turn error: %s", e)
+            yield f"data: {_json.dumps({'type': 'error', 'error': str(e)})}\n\n"
+
+    return StreamingResponse(
+        _generate(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+        },
+    )

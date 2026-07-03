@@ -61,7 +61,22 @@ app.include_router(domain_routes.router,  prefix="/api/domains",  tags=["domains
 
 @app.get("/health")
 async def health() -> dict:
-    return {"status": "ok", "version": "0.2.0"}
+    from fleetwright.bridge.config import claude_binary
+    import os
+    import pathlib
+    claude_path = claude_binary()
+    if claude_path != "claude":
+        claude_available = pathlib.Path(claude_path).exists()
+    else:
+        import shutil
+        claude_available = shutil.which("claude") is not None
+    return {
+        "status": "ok",
+        "version": "0.2.0",
+        "claude_binary": claude_path,
+        "claude_available": claude_available,
+        "db_backend": os.environ.get("DB_BACKEND", "sqlite"),
+    }
 
 
 @app.get("/api/config")

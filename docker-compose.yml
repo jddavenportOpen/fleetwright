@@ -1,0 +1,61 @@
+# docker-compose.yml — Fleetwright services
+#
+# The bridge runs on the HOST (not in Docker) because it needs access to:
+#   - your claude CLI installation and Claude Code subscription
+#   - tmux (for fleet session management)
+#   - git (for fleet worktree spawning)
+#
+# This compose file starts:
+#   db      — Postgres 16 (persistent state store for fleet runs)
+#   cockpit — Next.js supervision dashboard (port 3131)
+#
+# Start the bridge separately (after `pip install -e .`):
+#   fleetwright-bridge --port 8787
+#
+# Full one-command start (after bootstrap):
+#   docker compose up -d && fleetwright-bridge
+#
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: fleetwright
+      POSTGRES_USER: fleetwright
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-fleetwright_dev}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fleetwright -d fleetwright"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  cockpit:
+    build:
+      context: ./cockpit
+      dockerfile: Dockerfile
+    ports:
+      - "${COCKPIT_PORT:-3131}:3131"
+    environment:
+      BRIDGE_URL: ${BRIDGE_URL:-http://host.docker.internal:8787}
+      NEXT_PUBLIC_BRIDGE_URL: ${NEXT_PUBLIC_BRIDGE_URL:-http://localhost:8787}
+      PORT: 3131
+    depends_on:
+      db:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  default:
+    name: fleetwright
+    driver: bridge
