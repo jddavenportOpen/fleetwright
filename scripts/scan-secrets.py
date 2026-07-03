@@ -53,7 +53,7 @@ PATTERNS: list[tuple[str, re.Pattern, set[str]]] = [
 # Files to always skip (binary, vendored, generated)
 SKIP_EXTENSIONS = {".pyc", ".pyo", ".png", ".jpg", ".jpeg", ".gif", ".ico",
                    ".pdf", ".zip", ".tar", ".gz", ".whl", ".egg"}
-SKIP_NAMES = {"gitleaks", "LICENSE", "WORKPLAN.md"}  # WORKPLAN has intentional clawd-log ref
+SKIP_NAMES = {"gitleaks", "LICENSE", "WORKPLAN.md", "scan-secrets.py"}  # scanner exempts itself
 
 
 def files_to_scan(mode: str) -> list[Path]:
