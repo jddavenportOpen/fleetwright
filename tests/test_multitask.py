@@ -110,7 +110,6 @@ class TestMultitaskWithFleet:
 
     def test_partial_spawn_failure_returns_empty_string(self, monkeypatch):
         """If one spawn fails, that slot gets empty string; others succeed."""
-        call_count = [0]
 
         class FlakyFleet:
             def __init__(self, max_concurrency=None):
@@ -120,8 +119,9 @@ class TestMultitaskWithFleet:
                 return []
 
             def spawn(self, agent, objective, parent_run_id=None):
-                call_count[0] += 1
-                if call_count[0] == 2:
+                # Fail deterministically on the named objective, not call order.
+                # Concurrent threads race on call_count making order-based checks flaky.
+                if "fail" in objective:
                     raise RuntimeError("tmux died mid-spawn")
                 return make_handle()
 
