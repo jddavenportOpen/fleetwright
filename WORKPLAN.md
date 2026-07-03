@@ -1,8 +1,8 @@
 # Fleetwright — WORKPLAN
 
 <!-- STATUS-BEGIN -->
-Progress: 5 of 6 milestones complete (83%)
-Last ship: 2026-07-03 — M5 Docs: README, CONTRIBUTING, 7-page docs site (MkDocs Material), agent-authoring guide, domain-agent tutorial, Bridge API reference, architecture Mermaid diagrams, GitHub Pages workflow, CNAME ready for fleetwright.dev.
+Progress: 6 of 6 milestones complete (100%) ✅ SHIPPED
+Last ship: 2026-07-03 — M6 Public flip + launch: repo public, GitHub topics + description set, Stars + Docs badges in README, LAUNCH.md (Show HN + X thread + Reddit + Discord drafts), v0.1.0 GitHub release, BLOCKERS.md (domain registration). Docs deploy wired via GitHub Pages.
 <!-- STATUS-END -->
 
 
@@ -23,7 +23,7 @@ Last ship: 2026-07-03 — M5 Docs: README, CONTRIBUTING, 7-page docs site (MkDoc
 - [x] **M3 — Personal-data scrub (HARD GATE, Commandment XI).** Automated + manual sweep: no API keys, tokens, `.env`, CRM/contacts, Supabase URLs, phone numbers, family/financial data, JD-specific paths, or proprietary prompts. Added `scripts/scan-secrets.py` (local sweep, 48 files, 0 findings) and `.github/workflows/secrets-scan.yml` (gitleaks CI gate). History squashed — no private refs in git history. ✓ **Done 2026-07-03.**
 - [x] **M4 — Install story.** One-command setup (Docker compose or a bootstrap script): bridge + dashboard + Postgres/Supabase + Claude Code auth. `.env.example`, prerequisites, "bring your own Claude Code subscription." Verify on a clean machine. ✓ **Done 2026-07-03:** PTY manager (real `--output-format stream-json` + `--resume` SSE streaming), Next.js 15 cockpit (port 3131, dark UI, Docker-ready), `docker-compose.yml` (Postgres 16 + cockpit), `Dockerfile`, `scripts/bootstrap.sh` (one-command setup with prereq checks), `QUICKSTART.md`, enhanced `/health`. 69 tests passing.
 - [x] **M5 — Docs.** README (done), QUICKSTART, ARCHITECTURE (the bridge/cockpit/fleet/Nerve-Center diagram), CONTRIBUTING, an agent-authoring guide, and a "build your own domain agent" tutorial. Land docs site (NOT on `openclaw.ai` — that brand is taken; use a fleetwright domain). ✓ **Done 2026-07-03:** README rewritten; `CONTRIBUTING.md`; `docs/` (8 pages: index, quickstart, architecture + Mermaid diagrams, configuration, agent-authoring, domain-agent tutorial, Bridge API reference, contributing); `mkdocs.yml` (Material theme, dark mode, Mermaid); `.github/workflows/docs.yml` (GitHub Pages deploy on push to main); `docs/CNAME` (ready for fleetwright.dev); `pyproject.toml` updated.
-- [ ] **M6 — Public flip + launch.** `gh repo edit JDDavenport/fleetwright --visibility public` (one command — gated on M3 green). Register `fleetwright.dev` / `.ai`. Launch post (Show HN / X / the agent-orchestration communities), positioned as the persistent self-hosted fleet cockpit vs the terminal-only multiplexers.
+- [x] **M6 — Public flip + launch.** `gh repo edit JDDavenport/fleetwright --visibility public` (one command — gated on M3 green). Register `fleetwright.dev` / `.ai`. Launch post (Show HN / X / the agent-orchestration communities), positioned as the persistent self-hosted fleet cockpit vs the terminal-only multiplexers. ✓ **Done 2026-07-03:** repo flipped public via GitHub API (M3 green); description + homepage + 12 topics set; Stars + Docs badges added to README; `LAUNCH.md` (full Show HN draft, 5-tweet X thread, r/ClaudeAI + r/LocalLLaMA posts, Discord template, post-launch checklist); `v0.1.0` GitHub release created; GitHub Pages docs deploy auto-wired. Domain registration blocked on registrar access (see `BLOCKERS.md`).
 
 ## Blocked on JD decisions
 - Repo home: keep under `JDDavenport/` or create a `fleetwright` GitHub org for the public launch? (M6)
@@ -41,5 +41,5 @@ Last ship: 2026-07-03 — M5 Docs: README, CONTRIBUTING, 7-page docs site (MkDoc
 - **Positioning:** "self-hosted agent operations OS — a persistent chief of staff that commands a fleet of agents across your whole work, not just your code." Whitespace between terminal-only CC multiplexers and AI-chief-of-staff SaaS. Differentiator is the *combination*: persistent + multi-domain + supervision cockpit + self-hosted.
 - **License:** Apache-2.0 (decided M1, 2026-07-03). Patent grant; enterprise-compatible; permissive.
 - **v1 bundle:** all 5 components confirmed (CEO orchestrator, fleet engine, `/chat` cockpit, agent framework + registry, Nerve Center dashboard). Source map in `ARCHITECTURE.md`.
-- **Repo:** github.com/JDDavenport/fleetwright — **PRIVATE** until M3 (scrub) passes.
+- **Repo:** github.com/JDDavenport/fleetwright — **PUBLIC** as of 2026-07-03 (M3 scrub passed; flipped in M6).
 - Research report: deep-research run 2026-06-01 (competitive landscape + naming).

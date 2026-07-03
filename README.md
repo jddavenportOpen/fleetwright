@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://python.org)
 [![Tests](https://img.shields.io/badge/tests-69%20passing-brightgreen.svg)](tests/)
+[![GitHub Stars](https://img.shields.io/github/stars/JDDavenport/fleetwright?style=social)](https://github.com/JDDavenport/fleetwright)
+[![Docs](https://img.shields.io/badge/docs-fleetwright.dev-blue)](https://fleetwright.dev)
 
 ---
 
@@ -138,7 +140,7 @@ tests/                 pytest suite (69 tests)
 
 ## Documentation
 
-Full docs: [`docs/`](docs/) — or (once launched) **fleetwright.dev/docs**
+Full docs: [`docs/`](docs/) — **[fleetwright.dev/docs](https://fleetwright.dev/docs)** or [GitHub Pages](https://jddavenport.github.io/fleetwright/)
 
 - [Quick Start](QUICKSTART.md)
 - [Architecture](docs/architecture.md)
