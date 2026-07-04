@@ -161,3 +161,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). TL;DR: fork → branch → `pytest` → 
 ## License
 
 Apache 2.0. See [LICENSE](LICENSE).
+
+---
+
+## Related Tools
+
+- **[Context Kit](https://github.com/JDDavenport/context-kit)** — Personal Context Artifacts: give any AI agent deep personal context. 4 templates + 5 skills. MIT, one-command install.
