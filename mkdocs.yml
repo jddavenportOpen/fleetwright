@@ -1,8 +1,8 @@
 site_name: Fleetwright
 site_description: Self-hosted agent operations OS — a persistent chief of staff that commands a fleet of AI agents across your whole work.
 site_url: https://fleetwright.dev
-repo_url: https://github.com/JDDavenport/fleetwright
-repo_name: JDDavenport/fleetwright
+repo_url: https://github.com/jddavenportOpen/fleetwright
+repo_name: jddavenportOpen/fleetwright
 edit_uri: edit/main/docs/
 
 theme:
@@ -76,6 +76,6 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/JDDavenport/fleetwright
+      link: https://github.com/jddavenportOpen/fleetwright
 
 copyright: Apache 2.0 — Fleetwright contributors

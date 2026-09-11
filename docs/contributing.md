@@ -1,11 +1,11 @@
 # Contributing
 
-See also: [CONTRIBUTING.md](https://github.com/JDDavenport/fleetwright/blob/main/CONTRIBUTING.md) in the repo root.
+See also: [CONTRIBUTING.md](https://github.com/jddavenportOpen/fleetwright/blob/main/CONTRIBUTING.md) in the repo root.
 
 ## Development setup
 
 ```bash
-git clone https://github.com/JDDavenport/fleetwright.git
+git clone https://github.com/jddavenportOpen/fleetwright.git
 cd fleetwright
 python3 -m venv .venv
 source .venv/bin/activate

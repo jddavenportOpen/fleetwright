@@ -1,7 +1,7 @@
 # Fleetwright Launch Playbook
 
 Launch date: 2026-07-03  
-Repo: https://github.com/JDDavenport/fleetwright  
+Repo: https://github.com/jddavenportOpen/fleetwright  
 Docs: https://fleetwright.dev (domain pending) / https://jddavenport.github.io/fleetwright/
 
 ---
@@ -50,7 +50,7 @@ What Fleetwright adds:
 Tech: FastAPI bridge (SSE streaming, HMAC auth), Next.js 15 cockpit, Python fleet
 engine (tmux + worktree supervisor), SQLite/Postgres/Supabase adapters, 69 tests.
 
-Apache-2.0. https://github.com/JDDavenport/fleetwright
+Apache-2.0. https://github.com/jddavenportOpen/fleetwright
 
 Would love feedback on the architecture — particularly the PTY manager / bridge
 design and the CEO orchestrator loop. Happy to answer questions.
@@ -71,7 +71,7 @@ So I built Fleetwright: self-hosted agent ops OS.
 
 CEO orchestrator → domain agents → fleet of parallel workers → cockpit to watch it all.
 
-One command to run. Apache-2.0. github.com/JDDavenport/fleetwright 🧵
+One command to run. Apache-2.0. github.com/jddavenportOpen/fleetwright 🧵
 ```
 
 **Tweet 2 (the problem):**
@@ -107,18 +107,18 @@ Under the hood:
 • SQLite default / Postgres / Supabase adapters
 • 69 tests
 
-Full arch: github.com/JDDavenport/fleetwright/blob/main/docs/architecture.md
+Full arch: github.com/jddavenportOpen/fleetwright/blob/main/docs/architecture.md
 ```
 
 **Tweet 5 (CTA):**
 ```
 One-command setup:
 
-  git clone github.com/JDDavenport/fleetwright
+  git clone github.com/jddavenportOpen/fleetwright
   bash scripts/bootstrap.sh
   open http://localhost:3131
 
-Docs: fleetwright.dev (in progress) / github.com/JDDavenport/fleetwright
+Docs: fleetwright.dev (in progress) / github.com/jddavenportOpen/fleetwright
 
 Apache-2.0. Star if useful. Issues + PRs welcome.
 ```
@@ -136,7 +136,7 @@ Apache-2.0. Star if useful. Issues + PRs welcome.
 Hey Claude community,
 
 I open-sourced a project I've been building: Fleetwright
-https://github.com/JDDavenport/fleetwright
+https://github.com/jddavenportOpen/fleetwright
 
 It's a self-hosted "agent operations OS" — you get:
 
@@ -154,7 +154,7 @@ route work between them, or have them persist state across restarts.
 
 **Setup:**
 ```bash
-git clone https://github.com/JDDavenport/fleetwright
+git clone https://github.com/jddavenportOpen/fleetwright
 bash scripts/bootstrap.sh
 # opens cockpit at localhost:3131
 ```
@@ -174,7 +174,7 @@ on the orchestration design.
 Not a local model, but I think this is relevant to this community's ethos of
 owning your AI infrastructure.
 
-Fleetwright: https://github.com/JDDavenport/fleetwright
+Fleetwright: https://github.com/jddavenportOpen/fleetwright
 
 It's an open-source agent operations OS that runs on your own machine. You
 provide the Claude Code CLI (Max subscription, not metered API), and Fleetwright
@@ -213,7 +213,7 @@ worktrees) + Next.js supervision cockpit.
 
 One command: `bash scripts/bootstrap.sh` → cockpit at localhost:3131
 
-GitHub: https://github.com/JDDavenport/fleetwright  
+GitHub: https://github.com/jddavenportOpen/fleetwright  
 Apache-2.0, 69 tests, bring your own Claude Max.
 
 Would love feedback on the orchestration design!
@@ -232,7 +232,7 @@ Would love feedback on the orchestration design!
 
 ## Post-launch checklist
 
-- [ ] Flip repo public (`gh repo edit JDDavenport/fleetwright --visibility public`) ✅ DONE 2026-07-03
+- [ ] Flip repo public (`gh repo edit jddavenportOpen/fleetwright --visibility public`) ✅ DONE 2026-07-03
 - [ ] Set repo description + homepage (`fleetwright.dev`) ✅ DONE 2026-07-03
 - [ ] Add GitHub topics ✅ DONE 2026-07-03
 - [ ] Register `fleetwright.dev` + `fleetwright.ai` — BLOCKED (see BLOCKERS.md)
@@ -242,4 +242,4 @@ Would love feedback on the orchestration design!
 - [ ] Post r/ClaudeAI — draft in this file, ready to submit
 - [ ] Post r/LocalLLaMA — draft in this file, ready to submit
 - [ ] Post in agent Discord communities — draft in this file, ready to send
-- [x] Create GitHub release v0.1.0 ✅ DONE 2026-07-03 — https://github.com/JDDavenport/fleetwright/releases/tag/v0.1.0
+- [x] Create GitHub release v0.1.0 ✅ DONE 2026-07-03 — https://github.com/jddavenportOpen/fleetwright/releases/tag/v0.1.0

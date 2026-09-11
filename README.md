@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://python.org)
 [![Tests](https://img.shields.io/badge/tests-69%20passing-brightgreen.svg)](tests/)
-[![GitHub Stars](https://img.shields.io/github/stars/JDDavenport/fleetwright?style=social)](https://github.com/JDDavenport/fleetwright)
+[![GitHub Stars](https://img.shields.io/github/stars/jddavenportOpen/fleetwright?style=social)](https://github.com/jddavenportOpen/fleetwright)
 [![Docs](https://img.shields.io/badge/docs-fleetwright.dev-blue)](https://fleetwright.dev)
 
 ---
@@ -44,7 +44,7 @@ Fleetwright Bridge  (FastAPI, port 8787)
 ## Quick Start
 
 ```bash
-git clone https://github.com/JDDavenport/fleetwright.git
+git clone https://github.com/jddavenportOpen/fleetwright.git
 cd fleetwright
 bash scripts/bootstrap.sh
 ```
@@ -166,4 +166,4 @@ Apache 2.0. See [LICENSE](LICENSE).
 
 ## Related Tools
 
-- **[Context Kit](https://github.com/JDDavenport/context-kit)** — Personal Context Artifacts: give any AI agent deep personal context. 4 templates + 5 skills. MIT, one-command install.
+- **[Context Kit](https://github.com/jddavenportOpen/context-kit)** — Personal Context Artifacts: give any AI agent deep personal context. 4 templates + 5 skills. MIT, one-command install.

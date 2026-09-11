@@ -1,8 +1,8 @@
 # Fleetwright — Links
 
 ## Repository
-- GitHub: https://github.com/JDDavenport/fleetwright
-- Issues: https://github.com/JDDavenport/fleetwright/issues
+- GitHub: https://github.com/jddavenportOpen/fleetwright
+- Issues: https://github.com/jddavenportOpen/fleetwright/issues
 
 ## Documentation site
 - Docs: fleetwright.dev (M6 — domain pending) / jddavenport.github.io/fleetwright (GitHub Pages, live after first push to main)

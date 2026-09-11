@@ -3,7 +3,7 @@
 ## Development setup
 
 ```bash
-git clone https://github.com/JDDavenport/fleetwright.git
+git clone https://github.com/jddavenportOpen/fleetwright.git
 cd fleetwright
 python3 -m venv .venv
 source .venv/bin/activate

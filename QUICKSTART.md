@@ -12,7 +12,7 @@
 ## 1. Clone and configure
 
 ```bash
-git clone https://github.com/JDDavenport/fleetwright.git
+git clone https://github.com/jddavenportOpen/fleetwright.git
 cd fleetwright
 cp .env.example .env
 # Edit .env: set BRIDGE_SECRET to a random string

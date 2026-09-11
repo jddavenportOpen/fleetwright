@@ -47,9 +47,9 @@ fleetwright-drain   = "fleetwright.fleet.drainer:_main"
 fleetwright-bridge  = "fleetwright.bridge.main:_main"
 
 [project.urls]
-Homepage = "https://github.com/JDDavenport/fleetwright"
+Homepage = "https://github.com/jddavenportOpen/fleetwright"
 Documentation = "https://fleetwright.dev"
-Issues = "https://github.com/JDDavenport/fleetwright/issues"
+Issues = "https://github.com/jddavenportOpen/fleetwright/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

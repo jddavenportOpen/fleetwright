@@ -2,8 +2,8 @@
 
 **Self-hosted agent operations OS — a persistent chief of staff that commands a fleet of AI agents across your whole work.**
 
-[![GitHub Stars](https://img.shields.io/github/stars/JDDavenport/fleetwright?style=social)](https://github.com/JDDavenport/fleetwright)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/JDDavenport/fleetwright/blob/main/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/jddavenportOpen/fleetwright?style=social)](https://github.com/jddavenportOpen/fleetwright)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/jddavenportOpen/fleetwright/blob/main/LICENSE)
 
 Fleetwright gives you a **persistent, always-on agent fleet** on your own machine:
 
@@ -31,4 +31,4 @@ Fleetwright gives you a **persistent, always-on agent fleet** on your own machin
 ---
 
 Fleetwright is **open source** under the Apache 2.0 license.  
-Source: [github.com/JDDavenport/fleetwright](https://github.com/JDDavenport/fleetwright)
+Source: [github.com/jddavenportOpen/fleetwright](https://github.com/jddavenportOpen/fleetwright)
